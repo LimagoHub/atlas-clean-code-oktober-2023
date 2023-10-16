@@ -1,3 +1,5 @@
 
+L	java:S106"+Replace this use of System.out by a logger.(Š–¸Ôúÿÿÿÿ8Ì¬Ç½³1
+]	java:S125"<This block of commented-out lines of code should be removed.(Ëá¯´ùÿÿÿÿ8³îÌ½³1
 M
-java:S1128"+Remove this unused import 'java.awt.event'.(Ã®ÎÙÿÿÿÿÿ8¼¹‰¹³1
+java:S1128"+Remove this unused import 'java.awt.event'.(Ã®ÎÙÿÿÿÿÿ8³îÌ½³1
