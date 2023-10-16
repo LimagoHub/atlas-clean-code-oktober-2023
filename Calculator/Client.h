@@ -30,7 +30,7 @@ public:
     explicit Client(Calculator &calculator) : calculator(calculator) {}
 
     void go() {
-       
+
 
         std::cout << calculator.add(3,4) << std::endl;
     }
