@@ -4,19 +4,17 @@
 
 #pragma once
 
-#include "NimGamePlayer.h"
+#include "../../player/AbstractPlayer.h"
 
 namespace games::nimgame::player {
+    using namespace games::player;
 
-    class AbstractNimGamePlayer: public NimGamePlayer{
+    class AbstractNimGamePlayer : public AbstractPlayer<int, int> {
     public:
-        explicit AbstractNimGamePlayer(const std::string &name) : name(name) {}
+        AbstractNimGamePlayer(const std::string &name) : AbstractPlayer(name) {}
 
-        const std::string &getName() const override {
-            return name;
-        }
+        virtual ~AbstractNimGamePlayer() override {}
 
-    private:
-        std::string name;
+
     };
 }

@@ -3,90 +3,35 @@
 //
 
 #pragma once
-#include "../Game.h"
+#include <vector>
+#include "../AbstractGame.h"
+#include "../../io/Writer.h"
+#include "../player/Player.h"
+using namespace games::player;
+
 namespace games::nimgame {
 
-    class NimgameImpl : public Game{
+    class NimgameImpl : public AbstractGame<int,int>{
+
     public:
-        NimgameImpl(): stones{23}, gameover{false} {}
-
-        void play() override {
-            while(! isGameover()) {
-                playRound();
-            }
+        explicit NimgameImpl(io::Writer &writer) : AbstractGame(writer) {
+            setBoard(23);
         }
 
-    private:
-        int stones;
-        int turn;
-
-        bool gameover;
-
-        void playRound() {// Integration
-            playSingleTurn();
-            computerTurn();
-        }
-
-
-        void playSingleTurn() { // Integration
-            if(isGameover()) return ;
-
-            executeTurn();
-
-            terminateTurn("Human");
-        }
-
-
-
-        void executeTurn() {
-            do {
-                humanTurn();
-            } while (playersTurnIsInvalid());
-        }
-
-
-        void humanTurn() {
-            std::cout << "Es gibt " << stones << " Steine. Bitte nehmen Sie 1,2 oder 3" << std::endl;
-            std::cin >> turn;
-        }
-        bool playersTurnIsInvalid() {
-            if(isTurnValid()) return false ;
-            std::cout << "Ungueltiger Zug" << std::endl;
-            return true;
-        }
-
-
-
-
-        void computerTurn() {
-            if(isGameover()) return ;
-            const int ZUEGE[] = {3,1,1,2};
-
-            turn  = ZUEGE[stones % 4];
-            std::cout << "Computer nimmt " << turn << "Steine." << std::endl;
-
-            terminateTurn( "Computer");
-        }
-
-        void terminateTurn( std::string player) { // Integration
-            updateBoard();
-            printGameOverMessageIfGameIsOver(player);
-        }
-
-        void printGameOverMessageIfGameIsOver(const std::string &player) {
-            if(isGameover()) {
-                std::cout << player << "hat verloren." << std::endl;
-            }
-        }
+    protected:
 
 // --------------------------------- Sumpf --------------------------
 
-        bool isTurnValid() const { return turn >= 1 && turn <= 3; }
+        bool isTurnValid() const { return getTurn() >= 1 && getTurn() <= 3; }
 
-        void updateBoard() { stones -= turn; }
+        void updateBoard() { setBoard(getBoard() - getTurn()); }
 
-        bool isGameover() { // Operation
-            return stones <= 0;
+        bool isGameover() const override { // Operation
+            return getBoard() <= 0 || getPlayers().empty();
+        }
+
+        void prepareTurn() override {
+            write(getCurrentPlayer()->getName() + " ist am Zug!");
         }
 
     };
