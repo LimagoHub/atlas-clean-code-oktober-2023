@@ -6,15 +6,16 @@
 
 
 #include "Calculator.h"
-
+#include <memory>
 class CalculatorLogger : public Calculator{
-
-    Calculator &calculator;
+    using CALCULATOR = std::unique_ptr<Calculator>;
+    CALCULATOR calculator_;
 public:
-    CalculatorLogger(Calculator &calculator) : calculator(calculator) {}
+    CalculatorLogger(CALCULATOR calculator) : calculator_(std::move(calculator)) {}
+
     double add(double a, double b) {
         std::cout << "Add wurde gerufen" << std::endl;
-        return calculator.add(a,b);
+        return calculator_->add(a,b);
     }
 };
 

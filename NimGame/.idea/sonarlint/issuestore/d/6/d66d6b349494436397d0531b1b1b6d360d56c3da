@@ -1,0 +1,7 @@
+
+i	cpp:S1235"N'games::nimgame::NimgameImpl' has virtual functions but non-virtual destructor(ùİª~8ƒú…æ³1
+=	cpp:S1003
+"Remove this using-directive.(Ğ¼ûûøÿÿÿÿ8ËÚ¡å³1
+N	cpp:S3471"2Annotate this function with "override" or "final".(Îà³8ş†éå³1
+S	cpp:S3471"2Annotate this function with "override" or "final".(ò–áöıÿÿÿÿ8ş†éå³1
+i	cpp:S1235"N'games::nimgame::NimgameImpl' has virtual functions but non-virtual destructor(ùİª~8¬İíí³1

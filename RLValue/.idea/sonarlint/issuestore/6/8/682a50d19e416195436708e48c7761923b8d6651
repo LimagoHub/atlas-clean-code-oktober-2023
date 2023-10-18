@@ -1,0 +1,12 @@
+
+B	cpp:S5421"!Global variables should be const.(èé‹üûÿÿÿÿ8Åî ï³1
+„	cpp:S3624
+"âExplicitly define or delete the missing copy constructor and copy assignment operator so that they will not be implicitly provided. Additionally, you may consider defining the move assignment operator and the move constructor.(Ô¬¸ªøÿÿÿÿ8ú¯ùî³1
+j	cpp:S4963
+"IRemove this class' destructor so that the class follows the rule of Zero.(Ô¬¸ªøÿÿÿÿ8ú¯ùî³1
+J	cpp:S5817")This function should be declared "const".(›Š½ñüÿÿÿÿ8´ã÷î³1
+C	cpp:S5827&"'Replace the redundant type with "auto".(ÕÅ©­8õ©óŒ´1
+Y	cpp:S11990"8Extract this nested code block into a separate function.(ÒÌâ–øÿÿÿÿ8ß¥˜´1
+8cpp:S125"Remove the commented out code.(è»»_8´áïŒ´1
+9cpp:S125."Remove the commented out code.(ÅÙ†8òº™´1
+9cpp:S1257"Remove the commented out code.(ò™ó€8ÅÁóŒ´1

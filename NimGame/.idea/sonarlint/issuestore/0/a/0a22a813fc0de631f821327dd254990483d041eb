@@ -1,0 +1,13 @@
+
+V	cpp:S1117T":declaration shadows a field of 'AbstractGame<BOARD, TURN>'(ÈÄİÿ8­ÿæ³1
+U	cpp:S1117]":declaration shadows a field of 'AbstractGame<BOARD, TURN>'(¥È»u8¡ÚÂë³1
+[	cpp:S1117g":declaration shadows a field of 'AbstractGame<BOARD, TURN>'(¡Ÿ¢şÿÿÿÿ8­ÿæ³1
+l	cpp:S1235"P'games::AbstractGame<int, int>' has virtual functions but non-virtual destructor(ÎÓÚ8ĞÔíí³1
+V	cpp:S1117T":declaration shadows a field of 'AbstractGame<BOARD, TURN>'(ÈÄİÿ8 Øíí³1
+U	cpp:S1117]":declaration shadows a field of 'AbstractGame<BOARD, TURN>'(¥È»u8 Øíí³1
+[	cpp:S1117g":declaration shadows a field of 'AbstractGame<BOARD, TURN>'(¡Ÿ¢şÿÿÿÿ8 Øíí³1
+_	cpp:S1238k">Pass expensive to copy object "message" by reference to const.(ğÇÌ¨üÿÿÿÿ8Çÿæ³1
+V	cpp:S1117T":declaration shadows a field of 'AbstractGame<BOARD, TURN>'(ÈÄİÿ8¬İíí³1
+U	cpp:S1117]":declaration shadows a field of 'AbstractGame<BOARD, TURN>'(¥È»u8¬İíí³1
+[	cpp:S1117g":declaration shadows a field of 'AbstractGame<BOARD, TURN>'(¡Ÿ¢şÿÿÿÿ8¬İíí³1
+l	cpp:S1235"P'games::AbstractGame<int, int>' has virtual functions but non-virtual destructor(ÎÓÚ8¬İíí³1

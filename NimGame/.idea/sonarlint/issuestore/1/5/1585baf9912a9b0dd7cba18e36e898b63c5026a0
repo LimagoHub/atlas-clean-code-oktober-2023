@@ -1,0 +1,6 @@
+
+=	cpp:S1003
+"Remove this using-directive.(Ğ¼ûûøÿÿÿÿ8±©‡å³1
+K	cpp:S1709"/Add the "explicit" keyword to this constructor.(äŞœú8¤Š•å³1
+r	cpp:S3490"VUse "=default" instead of the default implementation of this special member functions.(Öæµ8ç˜å³1
+J	cpp:S3471".Drop the "virtual" specifier; it is redundant.(Öæµ8ç„‘å³1

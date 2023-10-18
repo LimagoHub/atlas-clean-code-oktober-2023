@@ -1,15 +1,15 @@
 #include <iostream>
-#include "math/CalculatorImpl.h"
-#include "math/CalculatorLogger.h"
+#include "math/CalculatorFactory.h"
+
 #include "Client.h"
-#include "math/CalculatorSecure.h"
+
 
 int main() {
 
-    CalculatorImpl calc;
-    CalculatorLogger logger{calc};
-    CalculatorSecure secure{logger};
-    Client client {secure};
+    CalculatorFactory::setLogger(true);
+    CalculatorFactory::setSecure(false);
+    auto calc = CalculatorFactory::create();
+    Client client {std::move(calc)};
     client.go();
 
 

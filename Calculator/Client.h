@@ -9,16 +9,11 @@
 #include <memory>
 #include "math/Calculator.h"
 
-class Fahrzeug {
-public:
-    void fahren() {
-
-    }
-};
 
 class Client {
 
-    Calculator &calculator;
+    using CALCULATOR = std::unique_ptr<Calculator>;
+    CALCULATOR calculator_;
 
 
 
@@ -26,13 +21,12 @@ class Client {
 public:
 
 
-
-    explicit Client(Calculator &calculator) : calculator(calculator) {}
+    explicit Client(CALCULATOR calculator) : calculator_(std::move(calculator)) {}
 
     void go() {
 
 
-        std::cout << calculator.add(3,4) << std::endl;
+        std::cout << calculator_->add(3,4) << std::endl;
     }
 
 };

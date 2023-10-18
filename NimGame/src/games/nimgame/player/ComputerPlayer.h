@@ -15,7 +15,7 @@ namespace games::nimgame::player {
     public:
         explicit ComputerPlayer(const std::string &name) : AbstractNimGamePlayer(name) {}
 
-        int doTurn(const int stones) const override {
+        int doTurn(const int &stones) const override {
 
             int turn  = ZUEGE[stones % 4];
             std::cout << "Computer nimmt " << turn << "Steine." << std::endl;

@@ -11,9 +11,10 @@ namespace io {
     class Writer {
 
     public:
-        virtual  ~Writer(){}
+        Writer() = default;
+        virtual  ~Writer()= default;
 
-        virtual void write(std::string message) = 0;
+        virtual void write(const std::string &message) const = 0;
 
     };
 

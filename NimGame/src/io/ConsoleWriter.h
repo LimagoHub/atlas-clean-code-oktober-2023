@@ -11,7 +11,7 @@ namespace io {
 
     class ConsoleWriter : public Writer{
     public:
-        void write(std::string message) override {
+        void write(const std::string &message) const override {
             std::cout << message << std::endl;
         }
     };

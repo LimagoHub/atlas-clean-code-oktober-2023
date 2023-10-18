@@ -20,7 +20,10 @@ namespace games {
             players.push_back(player);
         }
 
-
+        /*
+         * see Game.play()
+         *
+         */
         void play() override {
             while(! isGameover()) {
                 playRound();
@@ -88,10 +91,12 @@ namespace games {
         }
 
         void setBoard(BOARD board) {
+
             AbstractGame::board = board;
         }
 
         TURN getTurn() const {
+
             return turn;
         }
 
@@ -99,7 +104,7 @@ namespace games {
             AbstractGame::turn = turn;
         }
 
-        void write(std::string message) {
+        void write(std::string message){
             writer.write(message);
         }
 
@@ -127,4 +132,4 @@ namespace games {
 
 
 
-} // game
+}

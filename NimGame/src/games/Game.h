@@ -6,6 +6,9 @@
 
 namespace games {
 
+    /*
+        Spiel spielen
+    */
     class Game {
     public:
         virtual void play() = 0;

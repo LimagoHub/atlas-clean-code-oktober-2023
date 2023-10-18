@@ -10,14 +10,15 @@
 
 class CalculatorSecure : public Calculator{
 
-    Calculator &calculator;
+    using CALCULATOR = std::unique_ptr<Calculator>;
+    CALCULATOR calculator_;
 public:
-    explicit CalculatorSecure(Calculator &calculator) : calculator(calculator) {}
+    CalculatorSecure(CALCULATOR calculator) : calculator_(std::move(calculator)) {}
 
     double add(double a, double b) override {
         std::cout << "Du kommst hier rein " << std::endl;
 
-        return calculator.add(a,b);
+        return calculator_->add(a,b);
     }
 
 };
