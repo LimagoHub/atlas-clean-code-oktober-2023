@@ -1,7 +1,3 @@
 
-_	cpp:S1235
-"C'CalculatorLogger' has virtual functions but non-virtual destructor(åô¯Ã8 ÆÓŒ´1
-P	cpp:S1709"/Add the "explicit" keyword to this constructor.(ˆÙáúÿÿÿÿ8‚òÚŒ´1
-s	cpp:S4998"RReplace this use of "unique_ptr" by a raw pointer or a reference (possibly const).(ˆÙáúÿÿÿÿ8’µÔŒ´1
-T	cpp:S5415"3"std::move" should not be called on a const object.(ˆÙáúÿÿÿÿ8ŒĞÜŒ´1
-N	cpp:S3471"2Annotate this function with "override" or "final".(°÷ß8–•ÕŒ´1
+K	cpp:S1709"/Add the "explicit" keyword to this constructor.(Ü¯ê8¦÷·´1
+N	cpp:S3471"2Annotate this function with "override" or "final".(°÷ß8§÷·´1
