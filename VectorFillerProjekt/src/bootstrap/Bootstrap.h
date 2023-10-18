@@ -8,6 +8,15 @@ namespace bootstrap {
 
     class Bootstrap {
 
+    public:
+        Bootstrap(){
+
+        }
+
+        void startApplication() {
+
+        }
+
     };
 
 } // bootstrap
