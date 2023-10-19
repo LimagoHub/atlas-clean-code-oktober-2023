@@ -6,6 +6,7 @@
 #include <memory>
 #include <thread>
 #include "../generators/impl/random/mersenne_twister_number_generator.h"
+#include "../generators/impl/random/mersenne_twister_number_generator_factory.h"
 #include "../collection_utils/impl/sequential/VectorFactorySequentialImpl.h"
 #include "../collection_utils/impl/decorators//VectorFactoryBenchmarkDecorator.h"
 #include "../collection_utils/impl/decorators//VectorFactoryLoggerDecorator.h"
@@ -19,11 +20,11 @@ namespace bootstrap {
 
 
 
-        auto create(const size_t threadCount = 1) const -> void  {
+            auto create(const size_t threadCount = 1) const -> void  {
 
-            auto myGenerator = createGenerator();
+            auto myGeneratorBuilder = createGenerator();
 
-            VECTOR_FACTORY factory = createVectorFactory(std::move(myGenerator));
+            VECTOR_FACTORY factory = createVectorFactory(std::move(myGeneratorBuilder->create()));
 
             auto client = client::VectorClientImpl{std::move(factory)};
             client.doSomethingWithLargeVector();
@@ -37,8 +38,8 @@ namespace bootstrap {
         }
 
 
-        auto createGenerator() const -> std::unique_ptr<generators::Generator<int>> {
-            auto myGenerator = std::unique_ptr<generators::Generator<int>>(new generators::mersenne_twister_number_generator());
+        auto createGenerator() const -> std::unique_ptr<generators::GeneratorBuilder<int>> {
+            auto myGenerator = std::unique_ptr<generators::GeneratorBuilder<int>>(new generators::mersenne_twister_number_generator_factory());
             return myGenerator;
         }
 
