@@ -20,7 +20,7 @@ namespace collections {
     public:
 
         explicit VectorFactorySequentialImpl(MyGenerator generator) : generator_(std::move(generator)) {}
-        VectorFactorySequentialImpl() = default;
+
         ~VectorFactorySequentialImpl()  override = default;
 
 
