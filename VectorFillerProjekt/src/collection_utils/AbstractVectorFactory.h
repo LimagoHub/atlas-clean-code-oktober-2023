@@ -21,7 +21,7 @@ namespace collections {
 
 
 
-        size_t getSize() const {
+        auto getSize() -> size_t const {
             return size_;
         }
 
@@ -31,7 +31,7 @@ namespace collections {
         ~AbstractVectorFactory() override = default;
         auto createAndFill(size_t size) -> VECTOR override final {
 
-            //data_ = std::unique_ptr<std::vector<T>>{new std::vector<T>(size)};
+
             data_ = std::make_shared<std::vector<T>>(size);
             size_ = size;
             fill_array();

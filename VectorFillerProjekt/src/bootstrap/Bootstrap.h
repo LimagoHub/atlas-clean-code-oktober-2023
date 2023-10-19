@@ -4,6 +4,7 @@
 
 #pragma once
 #include <memory>
+#include <thread>
 #include "../generators/impl/random/mersenne_twister_number_generator.h"
 #include "../collection_utils/impl/sequential/VectorFactorySequentialImpl.h"
 #include "../collection_utils/impl/decorators//VectorFactoryBenchmarkDecorator.h"
@@ -46,7 +47,10 @@ namespace bootstrap {
 
 
         auto startApplication()-> void {
-            create(1);
+            for (int threadCount = 1; threadCount <= std::thread::hardware_concurrency() + 1; ++threadCount) {
+                create(threadCount);
+            }
+
         }
 
     };
