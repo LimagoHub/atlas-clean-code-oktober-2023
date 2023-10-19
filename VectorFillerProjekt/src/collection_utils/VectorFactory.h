@@ -9,11 +9,12 @@ namespace collections {
 
     template<class T>
     class VectorFactory {
-        using VECTOR = std::unique_ptr<std::vector<T> >;
+        using VECTOR = std::shared_ptr<std::vector<T> >;
     public:
+
         VectorFactory() = default;
         virtual ~VectorFactory() = default;
-        virtual VECTOR createAndFill(size_t size) = 0;
+        virtual auto createAndFill(size_t size) -> VECTOR = 0;
     };
 
 } // collections

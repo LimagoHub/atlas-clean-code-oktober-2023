@@ -12,19 +12,19 @@
 namespace client {
 
     class VectorClientImpl: public VectorClient {
-        using VECTOR = std::unique_ptr<std::vector<int> >;
+        using VECTOR = std::unique_ptr<collections::VectorFactory<int> >;
 
-        collections::VectorFactory<int> &factory;
+        VECTOR factory;
 
 
     public:
 
-        explicit VectorClientImpl(collections::VectorFactory<int> &factory) : factory(factory) {}
+        explicit VectorClientImpl(VECTOR factory) : factory(std::move(factory)) {}
 
         ~VectorClientImpl() override = default;
 
-        void doSomethingWithLargeVector() override {
-            VECTOR v = factory.createAndFill(10);
+        auto doSomethingWithLargeVector() ->void  override{
+            auto v = factory->createAndFill(1000000);
             for (int i = 0; i < 3; ++i) {
                 std::cout << v->at(i) << std::endl;
             }

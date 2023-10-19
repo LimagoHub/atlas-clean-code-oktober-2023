@@ -8,8 +8,9 @@ namespace client {
 
     class VectorClient {
     public:
+
         virtual ~VectorClient() = default;
-        virtual void doSomethingWithLargeVector() = 0;
+        virtual auto doSomethingWithLargeVector() ->void = 0;
     };
 
 } // client

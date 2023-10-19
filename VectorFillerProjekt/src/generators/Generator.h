@@ -10,7 +10,7 @@ namespace generators {
     class Generator {
     public:
         virtual ~Generator() = default;
-        virtual T next() = 0;
+        virtual auto next() -> T = 0;
 
     };
 
